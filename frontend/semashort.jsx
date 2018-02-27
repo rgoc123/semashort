@@ -4,10 +4,11 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-import { fetchLinks } from './actions/links_actions';
+import { fetchLinks, createLink } from './actions/links_actions';
 
 //START_TESTING
 window.fetchLinks = fetchLinks;
+window.createLink = createLink;
 //END_TESTING
 
 document.addEventListener('DOMContentLoaded', () => {
