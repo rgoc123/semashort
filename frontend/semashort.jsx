@@ -4,6 +4,12 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
+import { fetchLinks } from './actions/links_actions';
+
+//START_TESTING
+window.fetchLinks = fetchLinks;
+//END_TESTING
+
 document.addEventListener('DOMContentLoaded', () => {
   window.$ = $;
 
