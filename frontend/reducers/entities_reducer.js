@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux';
 
-export default combineReducers({
+import links from './links_reducer';
 
+export default combineReducers({
+  links
 });
