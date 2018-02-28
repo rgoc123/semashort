@@ -19,14 +19,23 @@ class LinkForm extends React.Component {
   generateShortLink2() {
     this.links = this.props.links;
     let chars = this.chars;
-    let string = this.links[this.links.length-1].short_link.split("");
+    let linkString = "";
+    if (this.links[this.links.length-1].short_link.length < 40) {
+      linkString = this.links[this.links.length-1].short_link;
+    } else {
+      linkString = this.links[this.links.length-1].short_link.substring(40);
+    }
+
+    let string = linkString.split("");
     let idx = 0;
+    let newString = "";
+    debugger
     string.forEach((ch, idx2) => {
       // if string is like "999"
       if ((ch === "9") && (idx === string.length-1)) {
         let newString = "";
         string.forEach(ch => newString += "a");
-        newString = newString + "a";
+        newString = "https://semashort.herokuapp.com/#/links/" + newString + "a";
         this.state.short_link = newString;
       } else if (ch === "9") {
         //if string is like "9a"
@@ -38,7 +47,9 @@ class LinkForm extends React.Component {
           newArr.forEach((ch, idx) => {
             string[idx] = ch;
           });
-          this.state.short_link = string.join("");
+          let newString = "";
+          newString = "https://semashort.herokuapp.com/#/links/" + string.join("");
+          this.state.short_link = newString;
         } else {
           //if string is like "99a"
           idx += 1;
@@ -51,7 +62,13 @@ class LinkForm extends React.Component {
           //if string is like "a"
           let next_idx = chars.indexOf(string[0]) + 1;
           string[0] = chars[next_idx];
-          this.state.short_link = string.join("");
+          // let newString = "";
+          let homelink = "https://semashort.herokuapp.com/#/links/";
+          newString = homelink.concat(string.join(""));
+          console.log(newString);
+          this.setState({
+            short_link: newString
+          });
         }
       }
     });
@@ -74,7 +91,7 @@ class LinkForm extends React.Component {
     this.generateShortLink2();
     this.props.createLink({
       long_link: this.state.long_link,
-      short_link: this.state.short_link,
+      short_link: "https://semashort.herokuapp.com/#/links/" + this.state.short_link,
       visits: 0
     });
   }
