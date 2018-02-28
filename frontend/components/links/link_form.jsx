@@ -22,17 +22,14 @@ class LinkForm extends React.Component {
     let string = this.links[this.links.length-1].short_link.split("");
     let idx = 0;
     string.forEach((ch, idx2) => {
+      // if string is like "999"
       if ((ch === "9") && (idx === string.length-1)) {
-        debugger
         let newString = "";
-        debugger
         string.forEach(ch => newString += "a");
-        debugger
         newString = newString + "a";
-        debugger
         this.state.short_link = newString;
-        debugger
       } else if (ch === "9") {
+        //if string is like "9a"
         if (string[idx + 1] !== "9") {
           let newArr = string.slice(0, idx+2);
           newArr = newArr.map(ch => ch = "a");
@@ -43,13 +40,15 @@ class LinkForm extends React.Component {
           });
           this.state.short_link = string.join("");
         } else {
+          //if string is like "99a"
           idx += 1;
-
         }
       } else {
+        //if string is like ???
         if (idx2 > 0) {
           this.state.short_link = string.join("");
         } else {
+          //if string is like "a"
           let next_idx = chars.indexOf(string[0]) + 1;
           string[0] = chars[next_idx];
           this.state.short_link = string.join("");
