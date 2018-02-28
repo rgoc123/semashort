@@ -12,6 +12,10 @@ class Api::LinksController < ApplicationController
     end
   end
 
+  def show
+    @link = Link.last
+  end
+
   private
   def link_params
     params.require(:link).permit(:long_link, :short_link, :visits)

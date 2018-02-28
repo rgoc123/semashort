@@ -5,31 +5,89 @@ class LinkForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: null,
       long_link: "",
-      short_link: "",
+      short_link: ""
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.generateShortLink2 = this.generateShortLink2.bind(this);
+    this.chars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+    this.currentShortLink = "";
+    this.currentIndex = 0;
+    this.currentLength = 0;
+  }
+
+  generateShortLink2() {
+    this.links = this.props.links;
+    let chars = this.chars;
+    let string = this.links[this.links.length-1].short_link.split("");
+    let idx = 0;
+    string.forEach((ch, idx2) => {
+      if ((ch === "9") && (idx === string.length-1)) {
+        debugger
+        let newString = "";
+        debugger
+        string.forEach(ch => newString += "a");
+        debugger
+        newString = newString + "a";
+        debugger
+        this.state.short_link = newString;
+        debugger
+      } else if (ch === "9") {
+        if (string[idx + 1] !== "9") {
+          let newArr = string.slice(0, idx+2);
+          newArr = newArr.map(ch => ch = "a");
+          let next_idx = chars.indexOf(string[idx + 1]) + 1;
+          newArr[newArr.length - 1] = chars[next_idx];
+          newArr.forEach((ch, idx) => {
+            string[idx] = ch;
+          });
+          this.state.short_link = string.join("");
+        } else {
+          idx += 1;
+
+        }
+      } else {
+        if (idx2 > 0) {
+          this.state.short_link = string.join("");
+        } else {
+          let next_idx = chars.indexOf(string[0]) + 1;
+          string[0] = chars[next_idx];
+          this.state.short_link = string.join("");
+        }
+      }
+    });
+  }
+
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
+  }
+
+  generateShortLink() {
+    this.currentShortLink = this.chars[this.currentIndex];
+    this.state.short_link = this.currentShortLink;
+    this.currentIndex += 1;
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.generateShortLink2();
+    this.props.createLink({
+      long_link: this.state.long_link,
+      short_link: this.state.short_link,
       visits: 0
-    }
-  }
-
-  update() {
-
-  }
-
-  handleSubmit() {
-
+    });
   }
 
   render() {
     return (
       <div className="create-link-form-container">
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label>
-            <input type="text" name="long-link" value="" placeholder="Place a link to shorten it" />
+            <input type="text" name="long-link" value={this.state.long_link} placeholder="Place a link to shorten it" onChange={this.update("long_link")} />
           </label>
-          <label>
-            <input type="text" name="short-link" value="" placeholder="Short link you want" />
-          </label>
+          <input type="submit" value="Shorten Link" />
         </form>
       </div>
     );
