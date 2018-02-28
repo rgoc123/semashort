@@ -13,9 +13,7 @@ class Api::LinksController < ApplicationController
   end
 
   def show
-    debugger
     @link = Link.find_by(params[:short_link])
-    debugger
     if @link
       render 'api/links/show'
     else

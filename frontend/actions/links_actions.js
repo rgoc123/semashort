@@ -28,6 +28,14 @@ export const fetchLinks = () => dispatch => {
   );
 };
 
+export const fetchLink = shortLink => dispatch => {
+  return (
+    APIUtilLinks.fetchLink(shortLink).then(link => (
+      dispatch(receiveLink(link))
+    ))
+  );
+};
+
 export const createLink = link => dispatch => {
   return (
     APIUtilLinks.createLink(link).then(link => (

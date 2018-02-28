@@ -8,7 +8,7 @@ const linksReducer = (state = {}, action) => {
     case RECEIVE_LINKS:
       return action.links;
     case RECEIVE_LINK:
-      return merge({}, state, {[action.link.id]: action.link});
+      return merge({}, state, {link: action.link});
     default:
       return state;
   }
