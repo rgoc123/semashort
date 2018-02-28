@@ -27,9 +27,6 @@ class LinkShow extends React.Component {
         window.location = this.props.link2.link.long_link;
       }
     }
-
-    // window.location = this.props.link2.link.long_link;
-    // window.location = this.link.long_link;
   }
 
 }
