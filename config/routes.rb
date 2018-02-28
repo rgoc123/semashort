@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+
+  get '/api/links/:shortLink', :to => 'api/links#show', defaults: {format: :json}
+
   namespace :api, defaults: {format: :json} do
-    resources :links, only: [:index, :create, :show]    
+    resources :links, only: [:index, :create, :show, :redirect]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

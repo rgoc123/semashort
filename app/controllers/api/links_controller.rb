@@ -13,7 +13,18 @@ class Api::LinksController < ApplicationController
   end
 
   def show
-    @link = Link.last
+    debugger
+    @link = Link.find_by(params[:short_link])
+    debugger
+    if @link
+      render 'api/links/show'
+    else
+      render json: @link.errors.full_messages, status: 404
+    end
+  end
+
+  def redirect
+    @link = Link.find_by(:short_link)
   end
 
   private

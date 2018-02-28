@@ -11,6 +11,7 @@ import {
 //Import components
 import LinksIndexContainer from './links/links_index_container';
 import LinkFormContainer from './links/link_form_container';
+import LinkShowContainer from './links/link_show_container';
 
 const App = () => (
   <div>
@@ -19,7 +20,8 @@ const App = () => (
 
     <Route exact path="/" component={LinkFormContainer} />
     <Route exact path="/" component={LinksIndexContainer} />
-
+    <Route exact path="/links/:shortLink" component={LinkShowContainer} />
+    
   </div>
 );
 
