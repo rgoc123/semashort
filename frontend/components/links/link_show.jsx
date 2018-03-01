@@ -6,7 +6,7 @@ class LinkShow extends React.Component {
 
   constructor(props) {
     super(props);
-    this.shortLink = this.props.match.params.shortLink;
+    this.shortLink = "https://semashort.herokuapp.com/#/links/" + this.props.match.params.shortLink;
     this.link = this.props.link;
     this.link2 = this.props.link2;
   }
@@ -16,15 +16,19 @@ class LinkShow extends React.Component {
   }
 
   render() {
+    debugger
     if(this.link) {
       window.location = this.link.long_link;
     } else {
-      if (!this.props.link2.link) {
+      if (!this.props.link2) {
+        debugger
         return (
           null
         );
       } else {
-        window.location = this.props.link2.link.long_link;
+        debugger
+        let longLink = this.props.link2[this.shortLink].long_link;
+        window.location = longLink;
       }
     }
   }

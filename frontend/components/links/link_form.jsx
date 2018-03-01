@@ -65,7 +65,6 @@ class LinkForm extends React.Component {
           // let newString = "";
           let homelink = "https://semashort.herokuapp.com/#/links/";
           newString = homelink.concat(string.join(""));
-          console.log(newString);
           this.setState({
             short_link: newString
           });
