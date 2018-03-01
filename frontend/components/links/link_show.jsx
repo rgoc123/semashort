@@ -16,18 +16,14 @@ class LinkShow extends React.Component {
   }
 
   render() {
-    debugger
     if(this.link) {
-      debugger
       window.location = this.link.long_link;
     } else {
       if (!this.props.link2) {
-        debugger
         return (
           null
         );
       } else {
-        debugger
         let longLink = "https://semashort.herokuapp.com/#/links/" + this.props.match.params.shortLink;
         window.location = longLink;
       }
