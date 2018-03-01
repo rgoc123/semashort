@@ -29,7 +29,6 @@ class LinkForm extends React.Component {
     let string = linkString.split("");
     let idx = 0;
     let newString = "";
-    debugger
     string.forEach((ch, idx2) => {
       // if string is like "999"
       if ((ch === "9") && (idx === string.length-1)) {
