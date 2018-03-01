@@ -12,12 +12,13 @@ class LinkShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchLink(this.shortLink);
+    this.props.fetchLink(this.props.match.params.shortLink);
   }
 
   render() {
     debugger
     if(this.link) {
+      debugger
       window.location = this.link.long_link;
     } else {
       if (!this.props.link2) {
@@ -27,7 +28,7 @@ class LinkShow extends React.Component {
         );
       } else {
         debugger
-        let longLink = this.props.link2[this.shortLink].long_link;
+        let longLink = "https://semashort.herokuapp.com/#/links/" + this.props.match.params.shortLink;
         window.location = longLink;
       }
     }
