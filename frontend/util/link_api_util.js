@@ -5,14 +5,6 @@ export const fetchLinks = () => {
   });
 };
 
-// export const fetchLink = shortLink => {
-//   return $.parseJSON($.ajax({
-//     method: 'GET',
-//     url: `/api/links/${shortLink}`,
-//     async: false
-//   }).responseText);
-// };
-
 export const fetchLink = short_link => {
 
   return $.ajax({

@@ -14,10 +14,9 @@ class LinksIndexItem extends React.Component {
     } else {
       return (
         <div className="links-index-item">
-          <span>{this.link.id}</span>
-          <span>{this.link.long_link}</span>
-          <span>{this.link.short_link}</span>
-          <span>{this.link.vists}</span>
+          <span>Destination: {this.link.long_link}</span>
+          <span>Short Link: {this.link.short_link}</span>
+          <span>Number of Visits: {this.link.visits}</span>
         </div>
       );
     }

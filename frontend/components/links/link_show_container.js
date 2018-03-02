@@ -6,10 +6,9 @@ import { fetchLink } from '../../actions/links_actions';
 import LinkShow from './link_show';
 
 const mSTP = (state, ownProps) => {
-  
+
   return {
-    link: state.entities.links[ownProps.match.params.shortLink],
-    link2: state.entities.links
+    link: state.entities.links[ownProps.match.params.shortLink]
   };
 };
 

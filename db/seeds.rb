@@ -7,6 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Link.destroy_all
-Link.create!(long_link: "https://sema4genomics.com/", short_link: "test1", visits: 5000)
-Link.create!(long_link: "google.com", short_link: "test2", visits: 2)
-Link.create!(long_link: "facebook.com", short_link: "test3", visits: 3)
+Link.create!(long_link: "https://sema4genomics.com/", short_link: "a", visits: 5000)
+Link.create!(long_link: "https://www.google.com/", short_link: "b", visits: 5)
+Link.create!(long_link: "https://www.facebook.com/", short_link: "c", visits: 2)
