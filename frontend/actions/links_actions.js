@@ -29,7 +29,7 @@ export const fetchLinks = () => dispatch => {
 };
 
 export const fetchLink = short_link => dispatch => {
-  debugger
+
   return (
     APIUtilLinks.fetchLink(short_link).then(link => (
       dispatch(receiveLink(link))

@@ -8,16 +8,16 @@ class LinkShow extends React.Component {
     super(props);
     this.shortLink = this.props.match.params.shortLink;
     this.props.fetchLink(this.shortLink);
-    debugger
+
   }
 
   componentWillMount() {
     this.long_link = window.getState().entities.links.link.long_link;
-    debugger
+
   }
 
   render() {
-    debugger
+    
     window.location = this.long_link;
   }
 

@@ -14,7 +14,7 @@ export const fetchLinks = () => {
 // };
 
 export const fetchLink = short_link => {
-  debugger
+
   return $.ajax({
     method: 'GET',
     url: `/api/links/${short_link}`,
