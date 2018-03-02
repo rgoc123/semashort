@@ -33,7 +33,7 @@ class LinkForm extends React.Component {
       if ((ch === "9") && (idx === string.length-1)) {
         let newString = "";
         string.forEach(ch => newString += "a");
-        newString = "https://semashort.herokuapp.com/#/links/" + newString + "a";
+        newString = newString + "a";
         this.state.short_link = newString;
       } else if (ch === "9") {
         if (string[idx + 1] !== "9") {
@@ -45,7 +45,7 @@ class LinkForm extends React.Component {
             string[idx] = ch;
           });
           let newString = "";
-          newString = "https://semashort.herokuapp.com/#/links/" + string.join("");
+          newString = string.join("");
           this.state.short_link = newString;
         } else {
           idx += 1;
@@ -53,14 +53,13 @@ class LinkForm extends React.Component {
       } else {
         if (idx2 > 0) {
           this.state.short_link = string.join("");
+          debugger
         } else {
           let next_idx = chars.indexOf(string[0]) + 1;
           string[0] = chars[next_idx];
-          let homelink = "https://semashort.herokuapp.com/#/links/";
-          newString = homelink.concat(string.join(""));
-          this.setState({
-            short_link: newString
-          });
+          newString = string.join("");
+          debugger
+          this.state.short_link = newString;
         }
       }
     });
@@ -75,6 +74,7 @@ class LinkForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.generateShortLink();
+    debugger
     this.props.createLink({
       long_link: this.state.long_link,
       short_link: "https://semashort.herokuapp.com/#/links/" + this.state.short_link,

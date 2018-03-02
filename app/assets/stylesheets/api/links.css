@@ -4,12 +4,6 @@
   margin: 5px auto;
 }
 
-.links-index-container {
-  position: absolute;
-  right: 0px;
-  top: 0px;
-}
-
 .links-index-item {
   border: 1px solid black;
   margin: 5px 0;
