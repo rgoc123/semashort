@@ -13,10 +13,11 @@ export const fetchLinks = () => {
 //   }).responseText);
 // };
 
-export const fetchLink = shortLink => {
+export const fetchLink = short_link => {
+  debugger
   return $.ajax({
     method: 'GET',
-    url: `/api/links/${shortLink}`,
+    url: `/api/links/${short_link}`,
     async: false
   });
 };

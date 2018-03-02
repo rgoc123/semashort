@@ -3,6 +3,7 @@ import { RECEIVE_LINKS, RECEIVE_LINK } from '../actions/links_actions';
 import merge from 'lodash/merge';
 
 const linksReducer = (state = {}, action) => {
+  debugger
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_LINKS:
