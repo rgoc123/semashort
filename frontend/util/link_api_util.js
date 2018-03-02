@@ -5,10 +5,19 @@ export const fetchLinks = () => {
   });
 };
 
+// export const fetchLink = shortLink => {
+//   return $.parseJSON($.ajax({
+//     method: 'GET',
+//     url: `/api/links/${shortLink}`,
+//     async: false
+//   }).responseText);
+// };
+
 export const fetchLink = shortLink => {
   return $.ajax({
     method: 'GET',
-    url: `/api/links/${shortLink}`
+    url: `/api/links/${shortLink}`,
+    async: false
   });
 };
 

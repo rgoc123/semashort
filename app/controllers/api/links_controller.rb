@@ -13,6 +13,8 @@ class Api::LinksController < ApplicationController
   end
 
   def show
+    # temp_short_link = "https://semashort.herokuapp.com/#/links/" + params[:short_link]
+    # debugger
     @link = Link.find_by(params[:short_link])
     if @link
       render 'api/links/show'
