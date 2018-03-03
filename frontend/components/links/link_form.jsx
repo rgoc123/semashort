@@ -11,9 +11,6 @@ class LinkForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.generateShortLink = this.generateShortLink.bind(this);
     this.chars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-    this.currentShortLink = "";
-    this.currentIndex = 0;
-    this.currentLength = 0;
   }
 
   generateShortLink() {
@@ -53,12 +50,10 @@ class LinkForm extends React.Component {
       } else {
         if (idx2 > 0) {
           this.state.short_link = string.join("");
-          debugger
         } else {
           let next_idx = chars.indexOf(string[0]) + 1;
           string[0] = chars[next_idx];
           newString = string.join("");
-          debugger
           this.state.short_link = newString;
         }
       }
@@ -74,7 +69,6 @@ class LinkForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.generateShortLink();
-    debugger
     this.props.createLink({
       long_link: this.state.long_link,
       short_link: "https://semashort.herokuapp.com/#/links/" + this.state.short_link,
