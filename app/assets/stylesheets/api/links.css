@@ -13,3 +13,7 @@
 .links-index-item span {
   display: block;
 }
+
+.link-form-button {
+  background-color: blue;
+}

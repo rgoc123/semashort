@@ -97,7 +97,7 @@ class LinkForm extends React.Component {
           <label>
             <input type="text" name="long-link" value={this.state.long_link} placeholder="Place a link to shorten it" onChange={this.update("long_link")} />
           </label>
-          <input type="submit" value="Shorten Link" />
+          <input className="link-form-button" type="submit" value="Shorten Link" />
         </form>
         {this.renderNewLink()}
       </div>
