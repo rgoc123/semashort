@@ -84,7 +84,7 @@ class LinkForm extends React.Component {
         <div className="last-link">
           <h3>Here is the last short link made!</h3>
           <h4>Short Link: {this.props.links[this.props.links.length - 1].short_link}</h4>
-          <h4>Long Link: {this.props.links[this.props.links.length - 1].long_link}</h4>
+          <h4>Destination: {this.props.links[this.props.links.length - 1].long_link}</h4>
         </div>
       );
     }
@@ -95,10 +95,19 @@ class LinkForm extends React.Component {
       <div className="create-link-form-container">
         <form onSubmit={this.handleSubmit}>
           <label>
-            <input type="text" name="long-link" value={this.state.long_link} placeholder="Place a link to shorten it" onChange={this.update("long_link")} />
+            <input type="text"
+            name="long-link"
+            className="form-field"
+            value={this.state.long_link}
+            placeholder="Paste link here"
+            onChange={this.update("long_link")} />
           </label>
           <input className="link-form-button" type="submit" value="Shorten Link" />
         </form>
+        <div className="instructions-container">
+          <h3>Instructions</h3>
+          <p>Copy the entire link you want to shorten directly from the address bar in your browser and paste it in the box above. Click the "Shorten Button Link, and see your new link appear below! You can now use that link in the address bar to get to your destination!"</p>
+        </div>
         {this.renderNewLink()}
       </div>
     );
