@@ -102,7 +102,8 @@ class LinkForm extends React.Component {
             placeholder="Paste link here"
             onChange={this.update("long_link")} />
           </label>
-          <input className="link-form-button" type="submit" value="Shorten Link" />
+          <input className="link-form-button" type="submit"
+          value="Shorten Link" />
         </form>
         <div className="instructions-container">
           <h3>Instructions</h3>
