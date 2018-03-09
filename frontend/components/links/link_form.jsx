@@ -107,7 +107,7 @@ class LinkForm extends React.Component {
         </form>
         <div className="instructions-container">
           <h3>Instructions</h3>
-          <p>Copy the entire link you want to shorten directly from the address bar in your browser and paste it in the box above. Click the "Shorten Button Link, and see your new link appear below! You can now use that link in the address bar to get to your destination!"</p>
+          <p>Copy the entire link you want to shorten directly from the address bar in your browser and paste it in the box above. Click the "Shorten Link" button, and see your new link appear below! You can now use that link in the address bar to get to your destination!</p>
         </div>
         {this.renderNewLink()}
       </div>
