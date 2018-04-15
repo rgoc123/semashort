@@ -66,6 +66,10 @@ class LinkForm extends React.Component {
     });
   }
 
+  clearLinkForm() {
+    this.state.short_link = "";
+  }
+
   handleSubmit(e) {
 
     e.preventDefault();
@@ -75,6 +79,7 @@ class LinkForm extends React.Component {
       short_link: "https://semashort.herokuapp.com/#/" + this.state.short_link,
       visits: 0
     });
+    this.clearLinkForm();
   }
 
   renderNewLink() {

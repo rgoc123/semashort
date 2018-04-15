@@ -14,7 +14,7 @@ class LinksIndexItem extends React.Component {
     } else {
       return (
         <div className="links-index-item">
-          <span>Short Link: {this.link.short_link}</span>
+          <span>Short Link: <a href={this.link.short_link} target="_blank">{this.link.short_link}</a></span>
           <span>Destination: {this.link.long_link}</span>
         </div>
       );
