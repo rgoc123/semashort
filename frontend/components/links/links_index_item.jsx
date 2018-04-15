@@ -16,7 +16,6 @@ class LinksIndexItem extends React.Component {
         <div className="links-index-item">
           <span>Destination: {this.link.long_link}</span>
           <span>Short Link: {this.link.short_link}</span>
-          <span>Number of Visits: {this.link.visits}</span>
         </div>
       );
     }

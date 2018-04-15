@@ -14,14 +14,13 @@ import LinkFormContainer from './links/link_form_container';
 import LinkShowContainer from './links/link_show_container';
 
 const App = () => (
-  <div className="container">
-
-    <h1>SemaShort</h1>
-
-    <Route exact path="/" component={LinkFormContainer} />
-    <Route exact path="/" component={LinksIndexContainer} />
-    <Route exact path="/links/:shortLink" component={LinkShowContainer} />
-
+  <div>
+    <h1 id="header">SemaShort</h1>
+    <div className="container">
+      <Route exact path="/" component={LinkFormContainer} />
+      <Route exact path="/" component={LinksIndexContainer} />
+      <Route exact path="/links/:shortLink" component={LinkShowContainer} />
+    </div>
   </div>
 );
 
