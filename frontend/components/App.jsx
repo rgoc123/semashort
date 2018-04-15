@@ -19,7 +19,7 @@ const App = () => (
     <div className="container">
       <Route exact path="/" component={LinkFormContainer} />
       <Route exact path="/" component={LinksIndexContainer} />
-      <Route exact path="/links/:shortLink" component={LinkShowContainer} />
+      <Route exact path="/:shortLink" component={LinkShowContainer} />
     </div>
   </div>
 );

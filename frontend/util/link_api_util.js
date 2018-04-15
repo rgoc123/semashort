@@ -8,12 +8,13 @@ export const fetchLinks = () => {
 export const fetchLink = short_link => {
   return $.ajax({
     method: 'GET',
-    url: `/api/links/${short_link}`,
+    url: `/${short_link}`,
     async: false
   });
 };
 
 export const createLink = link => {
+  
   return $.ajax({
     method: 'POST',
     url: '/api/links',

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get '/api/links/:short_link', :to => 'api/links#show', defaults: {format: :json}
+  get '/:short_link', :to => 'api/links#show', defaults: {format: :json}
 
   namespace :api, defaults: {format: :json} do
     resources :links, only: [:index, :create, :show]

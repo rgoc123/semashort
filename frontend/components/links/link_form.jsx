@@ -17,10 +17,10 @@ class LinkForm extends React.Component {
     this.links = this.props.links;
     let chars = this.chars;
     let linkString = "";
-    if (this.links[this.links.length-1].short_link.length < 40) {
+    if (this.links[this.links.length-1].short_link.length < 34) {
       linkString = this.links[this.links.length-1].short_link;
     } else {
-      linkString = this.links[this.links.length-1].short_link.substring(40);
+      linkString = this.links[this.links.length-1].short_link.substring(34);
     }
 
     let string = linkString.split("");
@@ -67,11 +67,12 @@ class LinkForm extends React.Component {
   }
 
   handleSubmit(e) {
+
     e.preventDefault();
     this.generateShortLink();
     this.props.createLink({
       long_link: this.state.long_link,
-      short_link: "https://semashort.herokuapp.com/#/links/" + this.state.short_link,
+      short_link: "https://semashort.herokuapp.com/#/" + this.state.short_link,
       visits: 0
     });
   }

@@ -10,7 +10,6 @@ body {
   width: 960px;
   margin: 0 auto;
   padding: 10px 20px;
-
 }
 
 .container {
@@ -72,6 +71,8 @@ body {
 .links-index-item span {
   display: block;
   margin: 5px 0 5px 10px;
+  width: 97%;
+  word-wrap: break-word;
 }
 
 .last-link {
@@ -82,8 +83,12 @@ body {
 
 .last-link h3 {
   margin: 18px 15px;
+  width: 94%;
+  word-wrap: break-word;
 }
 
 .last-link h4 {
   margin: 18px 15px;
+  width: 94%;
+  word-wrap: break-word;
 }
