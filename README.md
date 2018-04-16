@@ -1,24 +1,17 @@
-# README
+# SemaShort
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+SemaShort is a URL shortener that allows you to take URLs that are too long and cumbersome for convenient sharing and shorten them, making a short link that is easy to include in text messages and emails.
 
-Things you may want to cover:
+[SemaShort](http://semashort.herokuapp.com/#/)
 
-* Ruby version
+![SemaShort Image](./app/assets/images/semashort.png)
 
-* System dependencies
 
-* Configuration
+### Instructions
+Copy the entire link you want to shorten directly from the address bar in your browser and paste it in the field below. Click the "Shorten Link" button, and see your new link appear below! You can now use that link in the address bar to get to your destination!
 
-* Database creation
 
-* Database initialization
+### Technologies
+This application uses React, Redux, JavaScript and Ruby on Rails. Redux and JavaScript are used in connection with Rails to access the database of links and determine what the next short link should be. The React form then generates the new short link, passes it back to the database, and renders it for the user to see and copy.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The redirection effect works by creating a React component that, upon mounting, takes the shortened URL that was entered in address bar, finds the corresponding destination URL, and then changes the window location to the destination URL.
